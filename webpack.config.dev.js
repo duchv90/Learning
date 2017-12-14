@@ -11,6 +11,9 @@ export default {
     path: '/',
     publicPath: '/'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -20,6 +23,11 @@ export default {
     loaders: [
       {
         test: /\.js$/,
+        include: path.join(__dirname, 'app/client'),
+        loader: [ 'react-hot-loader/webpack', 'babel-loader' ]
+      },
+      {
+        test: /\.jsx$/,
         include: path.join(__dirname, 'app/client'),
         loader: [ 'react-hot-loader/webpack', 'babel-loader' ]
       }

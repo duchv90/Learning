@@ -1,11 +1,9 @@
 import React from 'react';
 
-class Greettings extends React.Component {
-  render() {
-    return (
-      <h1 className="class-name">12345!!!</h1>
-    );
-  }
+export default () => {
+  return (
+    <div className="jumbotron">
+      <h1 className="">Hi !!!!</h1>
+    </div>
+  );
 }
-
-export default Greettings;
