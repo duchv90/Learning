@@ -25,4 +25,4 @@ Register.propTypes = {
   userRegisterRequest: PropTypes.func.isRequired
 }
 
-export default connect((state) => { return {} }, { userRegisterRequest })(Register);
+export default connect(null , { userRegisterRequest })(Register);
