@@ -23,12 +23,18 @@ export default {
     loaders: [
       {
         test: /\.js$/,
-        include: path.join(__dirname, 'app/client'),
+        include: [
+          path.join(__dirname, 'app/client'),
+          path.join(__dirname, 'app/server/shared')
+        ],
         loader: [ 'react-hot-loader/webpack', 'babel-loader' ]
       },
       {
         test: /\.jsx$/,
-        include: path.join(__dirname, 'app/client'),
+        include: [
+          path.join(__dirname, 'app/client'),
+          path.join(__dirname, 'app/server/shared')
+        ],
         loader: [ 'react-hot-loader/webpack', 'babel-loader' ]
       }
     ]

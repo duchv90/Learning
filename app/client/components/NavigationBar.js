@@ -5,7 +5,7 @@ class NavigationBar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">Hoàng Việt Đức</a>
+        <a className="navbar-brand" href="#">Website</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
           <span className="navbar-toggler-icon"></span>
         </button>
