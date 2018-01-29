@@ -36,12 +36,18 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "shortid": "^2.2.8",
     "validator": "^9.2.0",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-hot-middleware": "^2.21.0"
   },
   "dependencies": {
-    "history": "^4.7.2"
+    "bcrypt": "^1.0.3",
+    "bookshelf": "^0.12.1",
+    "history": "^4.7.2",
+    "jsonwebtoken": "^8.1.1",
+    "knex": "^0.14.2",
+    "pg": "^7.4.1"
   }
 }

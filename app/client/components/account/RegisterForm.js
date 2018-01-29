@@ -1,12 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import timezones from '../../data/timezones';
 import map from 'lodash/map';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import validateInput from '../../../server/shared/validations/register';
 import TextFieldGroup from '../common/TextFieldGroup';
-
-const history = createHistory();
 
 class RegisterForm extends React.Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class RegisterForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -46,8 +45,12 @@ class RegisterForm extends React.Component {
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       this.props.userRegisterRequest(this.state).then(
-        () => {
-          this.context.router.push('/');
+        ( data ) => {
+          this.props.addFlashMessages({
+            type: 'success',
+            text: 'You signed up successfully. Welcome!'
+          });
+          this.props.history.push('/');
         },
         ( err ) => this.setState({ errors: err.response.data, isLoading: false })
       );
@@ -114,11 +117,8 @@ class RegisterForm extends React.Component {
 }
 
 RegisterForm.propTypes = {
-  userRegisterRequest: PropTypes.func.isRequired
+  userRegisterRequest: PropTypes.func.isRequired,
+  addFlashMessages: PropTypes.func.isRequired
 }
 
-RegisterForm.contextTypes = {
-  router: PropTypes.object.isRequired
-}
-
-export default RegisterForm;
+export default withRouter(RegisterForm);
